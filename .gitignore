@@ -1,0 +1,145 @@
+# ---- Python bytecode / cache ----
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ---- Compiled extensions ----
+*.so
+
+# ---- Distribution / packaging ----
+.Python
+build/
+dist/
+.eggs/
+*.egg-info/
+*.egg
+wheels/
+*.whl
+MANIFEST
+
+# ---- Installer logs ----
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ---- Virtual environments ----
+.env
+.env.*
+.venv/
+venv/
+env/
+.venv*/
+
+# ---- Pipenv / Poetry / Lock files ----
+# Keep Pipfile & Pipfile.lock for deterministic builds
+# Keep poetry.lock if added later
+
+# ---- Requirements artifacts ----
+*.pip
+pip-wheel-metadata/
+
+# ---- PyInstaller ----
+*.manifest
+*.spec
+
+# ---- Unit test / coverage ----
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+htmlcov/
+
+# ---- Type checking / static analysis ----
+.mypy_cache/
+.dmypy.json
+.dmypy/
+.pyre/
+.pytype/
+ruff_cache/
+
+# ---- Logs & debug ----
+*.log
+logs/
+
+# ---- Jupyter / IPython ----
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# ---- Notebooks autosave ----
+*.nbconvert.ipynb
+
+# ---- Django / Flask / FastAPI (generic web) ----
+instance/
+.pybuilder/
+
+# ---- Local data / runtime artifacts ----
+*.sqlite3
+*.db
+*.db-journal
+
+# ---- Cache / state dirs ----
+__pypackages__/
+
+# ---- OS / Editor junk ----
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ---- JetBrains / IDE ----
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# ---- Project specific model / large artifacts ----
+*.pt
+*.bin
+*.ckpt
+*.h5
+models/
+checkpoints/
+
+# ---- HuggingFace / Transformers caches ----
+huggingface/
+.cache/huggingface/
+
+# ---- Tokenizers / datasets cache ----
+.cache/datasets/
+
+# ---- Site packages (should not be committed) ----
+site-packages/
+
+# ---- Temporary files ----
+*.tmp
+*.temp
+~$*
+
+# ---- Coverage tools ----
+*.lcov
+
+# ---- Docker / container build cruft ----
+*.tar
+
+# ---- Security / credentials (add if created) ----
+.pypirc
+.secrets/
+
+# ---- Generated docs ----
+docs/_build/
+
+# ---- Ignore local env override files ----
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ---- Lock-in avoidance notes ----
+# If you add environment.yaml (conda) keep it versioned for reproducibility.
+
