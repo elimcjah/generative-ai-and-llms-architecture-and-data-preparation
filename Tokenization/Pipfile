@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+nltk = "*"
+transformers = "==4.42.1"
+sentencepiece = "==0.1.99"
+spacy = "*"
+scikit-learn = "*"
+torch = "==2.0.1"
+torchtext = "==0.15.2"
+numpy = "==1.26.0"
+
+[scripts]
+download-spacy-models = "python -m spacy download en_core_web_sm && python -m spacy download de_core_news_sm"
+
+[requires]
+python_version = "3.11"

@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+tensorflow = "*"  # unpinned in requirements.txt
+transformers = "==4.42.1"
+sentencepiece = "==0.1.99"
+torch = "==2.0.1"
+torchtext = "==0.15.2"
+numpy = "==1.26.4"
+watchfiles = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
