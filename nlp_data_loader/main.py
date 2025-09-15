@@ -72,6 +72,12 @@ def collate_fn(batch):
     padded_batch = pad_sequence(batch, batch_first=True, padding_value=0)
     return padded_batch
 
+# Create a custom collate function
+def collate_fn_bfFALSE(batch):
+    # Pad sequences within the batch to have equal lengths
+    padded_batch = pad_sequence(batch, padding_value=0)
+    return padded_batch
+
 # Tokenizer
 tokenizer = get_tokenizer("basic_english")
 
@@ -96,7 +102,7 @@ batch_size = 2
 # Create a data loader
 dataloader = DataLoader(custom_dataset, batch_size=batch_size, collate_fn=collate_fn)
 
-print("\nbatch prints:")
+print("\ncollate_fn=collate_fn:")
 # Iterate through the data loader
 for batch in dataloader:
     print(batch)
@@ -106,4 +112,15 @@ for batch in dataloader:
     for row in batch:
         for idx in row:
             words = [vocab.get_itos()[idx] for idx in row]
+        print(words)
+
+# Create a data loader with the custom collate function with batch_first=True,
+dataloader_bfFALSE = DataLoader(custom_dataset, batch_size=batch_size, collate_fn=collate_fn_bfFALSE)
+
+print("\ncollate_fn=collate_fn_bfFALSE:")
+# Iterate through the data loader
+for seq in dataloader_bfFALSE:
+    for row in seq:
+        #print(row)
+        words = [vocab.get_itos()[idx] for idx in row]
         print(words)
