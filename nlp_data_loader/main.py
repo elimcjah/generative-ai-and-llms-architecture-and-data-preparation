@@ -12,10 +12,11 @@ LIBS = [
     ("numpy", "__version__"),
     ("torch", "__version__"),
     ("torchtext", "__version__"),
+    # torchdata removed from requirements; keep optional check label only
+]
+
+OPTIONAL_LIBS = [
     ("torchdata", "__version__"),
-    ("portalocker", "__version__"),
-    ("pandas", "__version__"),
-    ("sklearn", "__version__"),
 ]
 
 def _version(mod, attr):
@@ -31,10 +32,18 @@ def main():
             results.append(f"{name}={_version(m, attr)}")
         except Exception as e:
             results.append(f"{name}=ERROR({e.__class__.__name__}: {e})")
+
+    # Optional libs (do not count errors as failures)
+    for name, attr in OPTIONAL_LIBS:
+        try:
+            m = importlib.import_module(name)
+            results.append(f"(optional) {name}={_version(m, attr)}")
+        except Exception:
+            results.append(f"(optional) {name}=not installed")
+
     print("Loaded libs:")
     for line in results:
         print(" -", line)
 
 if __name__ == "__main__":
     main()
-

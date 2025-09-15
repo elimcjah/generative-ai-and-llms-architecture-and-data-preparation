@@ -1,0 +1,54 @@
+# Exclude version control
+.git
+.gitignore
+
+# Python caches / artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.build/
+build/
+dist/
+.eggs/
+*.egg-info/
+
+# Env / virtual envs
+.env
+.venv/
+venv/
+ENV/
+
+# Jupyter / notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# Logs / temp
+*.log
+*.tmp
+*.temp
+
+# Caches
+.cache/
+.pytest_cache/
+.mypy_cache/
+ruff_cache/
+
+# Tests (omit if you later need them inside image)
+tests/
+
+# Dataset / model dirs (add real names if created)
+models/
+checkpoints/
+
+# Hugging Face caches
+huggingface/
+.cache/huggingface/
+.cache/datasets/
+
+# Local tooling
+.vscode/
+.idea/
+
+# Pipenv build uses Pipfile (keep it). If you add a Pipfile.lock for reproducibility, remove it from ignore.
+# requirements.txt currently unused (left for reference); keep it if you want an alternate pip-only workflow.
